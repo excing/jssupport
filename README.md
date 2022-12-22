@@ -2,6 +2,13 @@
 
 jssupport 全称 JavaScript support library。是一个 js 的支持库。
 
+## import
+
+```js
+<script src="https://excing.github.io/jssupport/router.js"></script>
+<script src="https://excing.github.io/jssupport/compose.js"></script>
+```
+
 ## todo
 
 - 路由框架 ✅

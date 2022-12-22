@@ -1,5 +1,5 @@
 
-function model() {
+function Model() {
   let div = document.createElement("div")
   div.style.position = 'fixed'
   div.style.zIndex = 999
@@ -14,12 +14,30 @@ function model() {
  * 返回一个 div 元素
  * @returns div 元素
  */
-function div() {
-  let div = document.createElement("div")
-  return div
+function Container(...elements) {
+  let container = document.createElement("div")
+  elements.forEach(el => {
+    container.appendChild(el)
+  })
+  return container
 }
 
-function button(text, {
+function Flex({
+  alignItems,
+  justifyContent,
+}, ...elements) {
+  let container = document.createElement("div")
+  container.style.display = 'flex'
+  container.style.alignItems = alignItems
+  container.style.justifyContent = justifyContent
+  elements.forEach(el => {
+    container.appendChild(el)
+  })
+  return container
+}
+
+function Button({
+  text = '',
   onclick = () => { },
 }) {
   let button = document.createElement('button')
@@ -28,8 +46,14 @@ function button(text, {
   return button
 }
 
-function input(placeholder) {
+function Input({
+  placeholder = '',
+  value = '',
+  onchange = () => { },
+}) {
   let el = document.createElement('input')
   el.placeholder = placeholder
+  el.value = value
+  el.onchange = onchange
   return el
 }
