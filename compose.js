@@ -57,3 +57,9 @@ function Input({
   el.onchange = onchange
   return el
 }
+
+function Text({ text }) {
+  let el = document.createElement('span')
+  el.innerText = text
+  return el
+}
